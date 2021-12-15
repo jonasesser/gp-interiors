@@ -904,8 +904,563 @@ let interiors = [
         "Position": "117.22, -620.938, 206.1398",
         "IPL": "null",
         "Categories": ""
+    },
+    {
+        "Name": "Gunrunning Heist Yacht",
+        "Position": "-1418.21000000, 6749.81000000, 10.98968000",
+        "IPL": "gr_heist_yacht2",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Gunrunning Heist Yacht bar",
+        "Position": "-1418.21000000, 6749.81000000, 10.98968000",
+        "IPL": "gr_heist_yacht2_bar",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Gunrunning Heist Yacht bedrm",
+        "Position": "-1418.21000000, 6749.81000000, 10.98968000",
+        "IPL": "gr_heist_yacht2_bedrm",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Gunrunning Heist Yacht bridge",
+        "Position": "-1418.21000000, 6749.81000000, 10.98968000",
+        "IPL": "gr_heist_yacht2_bridge",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Gunrunning Heist Yacht enginrm",
+        "Position": "-1418.21000000, 6749.81000000, 10.98968000",
+        "IPL": "gr_heist_yacht2_enginrm",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Gunrunning Heist Yacht lounge",
+        "Position": "-1418.21000000, 6749.81000000, 10.98968000",
+        "IPL": "gr_heist_yacht2_lounge",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht smboat",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "smboat",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht smboat_lod",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "smboat_lod",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "hei_yacht_heist",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht enginrm",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "hei_yacht_heist_enginrm",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht Lounge",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "hei_yacht_heist_Lounge",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht Bridge",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "hei_yacht_heist_Bridge",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht Bar",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "hei_yacht_heist_Bar",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht Bedrm",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "hei_yacht_heist_Bedrm",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht DistantLights",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "hei_yacht_heist_DistantLights",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Heist Yacht LODLights",
+        "Position": "-2027.946, -1036.695, 6.707587",
+        "IPL": "smbhei_yacht_heist_LODLightsoat",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht smboat",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "smboat",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht smboat_lod",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "smboat_lod",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht smboat",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "smboat",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht enginrm",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist_enginrm",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht Lounge",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist_Lounge",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht Bridge",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist_Bridge",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht Bar",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist_Bar",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht Bedrm",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist_Bedrm",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht DistantLights",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist_DistantLights",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Dignity Party Yacht LODLights",
+        "Position": "-2023.643, -1038.119, 5.576781",
+        "IPL": "hei_yacht_heist_LODLights",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_carrier",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier DistantLights",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_carrier_DistantLights",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier int1",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_Carrier_int1",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier int2",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_Carrier_int2",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier int3",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_Carrier_int3",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier int4",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_Carrier_int4",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier int5",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_Carrier_int5",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier int6",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_Carrier_int6",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Aircraft Carrier LODLights",
+        "Position": "3084.73, -4770.709, 15.26167",
+        "IPL": "hei_carrier_LODLights",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Bridge Train Crash",
+        "Position": "532.1309, 4526.187, 89.79387",
+        "IPL": "canyonriver01_traincrash",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Bridge Train Crash end",
+        "Position": "532.1309, 4526.187, 89.79387",
+        "IPL": "railing_end",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Bridge Train Normal",
+        "Position": "532.1309, 4526.187, 89.79387",
+        "IPL": "canyonriver01",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Bridge Train Normal start",
+        "Position": "532.1309, 4526.187, 89.79387",
+        "IPL": "railing_start",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01c",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01c",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01d",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01d",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01e",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01e",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01f",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01f",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01g",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01g",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01h",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01h",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01i",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01i",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01j",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01j",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01k",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01k",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue01z",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue01z",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue02",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue02",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue03",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue03",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue03b",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue03b",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue03_grv_dug",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue03_grv_dug",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue_grv_torch",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue_grv_torch",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue04",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue04",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue04b",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue04b",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue04_cover",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue04_cover",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton des_protree_end",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "des_protree_end",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton des_protree_start",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "des_protree_start",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue05",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue05",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue05b",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue05b",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue06",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue06",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue06b",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue06b",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue06_int",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue06_int",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue06_pannel",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue06_pannel",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton plg_occl_00",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "plg_occl_00",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologue_occl",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologue_occl",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologuerd",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologuerd",
+        "Categories": "Special"
+    },
+    {
+        "Name": "North Yankton prologuerdb",
+        "Position": "3217.697, -4834.826, 111.8152",
+        "IPL": "prologuerdb",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm Burnt farmint",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "farmint",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm Burnt farm_burnt",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "farm_burnt",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm Burnt farm_burnt_props",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "farm_burnt_props",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm Burnt des_farmhouse",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "des_farmhouse",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm Burnt des_farmhs_endimap",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "des_farmhs_endimap",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm Burnt des_farmhs_end_occl",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "des_farmhs_end_occl",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "farm",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm farm_lod",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "farm_lod",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm farm_props",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "farm_props",
+        "Categories": "Special"
+    },
+    {
+        "Name": "ONeils Farm farm_int",
+        "Position": "2469.03, 4955.278, 45.11892",
+        "IPL": "farm_int",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Morgue coronertrash",
+        "Position": "275.446, -1361.11, 24.5378",
+        "IPL": "coronertrash",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Morgue coronertrash Coroner_Int_On",
+        "Position": "275.446, -1361.11, 24.5378",
+        "IPL": "Coroner_Int_On",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Lester's factory id2_14_during_door",
+        "Position": "716.84, -962.05, 31.59",
+        "IPL": "id2_14_during_door",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Lester's factory id2_14_during1",
+        "Position": "716.84, -962.05, 31.59",
+        "IPL": "id2_14_during1",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Life Invader Lobby facelobby",
+        "Position": "-1047.9, -233.0, 39.0",
+        "IPL": "facelobby",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Life Invader Lobby facelobby_lod",
+        "Position": "-1047.9, -233.0, 39.0",
+        "IPL": "facelobby_lod",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Tunnels v_tunnel_hole",
+        "Position": "-49.415, -558,287, 30.10",
+        "IPL": "v_tunnel_hole",
+        "Categories": "Special"
+    },
+    {
+        "Name": "Tunnels v_tunnel_hole_lod",
+        "Position": "-49.415, -558,287, 30.10",
+        "IPL": "v_tunnel_hole_lod",
+        "Categories": "Special"
+    },
+    {
+        "Name": "MD Mount Zonah",
+        "Position": "-473.4971, -361.0964, 33.9467",
+        "IPL": "Custom",
+        "Categories": "Custom"
     }
+
 ];
+
+export enum GpInteriors_Category {
+    Custom = "Custom",
+    Special = "Special",
+    Store = "Store",
+    FIB = "FIB",
+    Penthouse = "Penthouse",
+    Garage = "Garage",
+    CargoShip = "Cargo Ship",
+    Warehouse = "Warehouse",
+    CompanyWarehouse = "Company Warehouse",
+    Office = "Office",
+    Stilthouse = "Stilthouse",
+}
 
 export class GpInteriors {
 
@@ -940,11 +1495,11 @@ export class GpInteriors {
         return null;
     }
 
-    static getInteriors(): String[] {
+    static getInteriors(): string[] {
         return null;
     }
 
-    static getInteriorsByCategory(): String[] {
+    static getInteriorsByCategory(category: string): string[] {
         return null;
     }
 }
