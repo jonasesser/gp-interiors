@@ -17,11 +17,13 @@ GotoInterior Command for Athena Framework
 
 2. In-Code as developer
 
-    ```import { GpInteriors, GpInteriors_Category } from '../gpInteriors/gpInteriors';```
-    ```let allInteriorNames = GpInteriors.getInteriors();```
-    ```let interiorNamesByCat = GpInteriors.getInteriorsByCategory(GpInteriors_Category.Office);```
-    ```position = GpInteriors.getInteriorPosition(interiorNamesByCat[0]);  //returns alt.Vector3```
-    ```let ipl = GpInteriors.getInteriorIPL(interiorNamesByCat[0]); //returns IPL name to be load or null```
+    ```
+    import { GpInteriors, GpInteriors_Category } from '../gpInteriors/gpInteriors';
+    let allInteriorNames = GpInteriors.getInteriors();```
+    let interiorNamesByCat = GpInteriors.getInteriorsByCategory(GpInteriors_Category.Office);
+    position = GpInteriors.getInteriorPosition(interiorNamesByCat[0]);  //returns alt.Vector3
+    let ipl = GpInteriors.getInteriorIPL(interiorNamesByCat[0]); //returns IPL name to be load or null
+    ```
 
 # Categories
 
