@@ -2,6 +2,7 @@ import * as alt from 'alt-server';
 import { Vector3 } from 'alt-shared';
 import { playerFuncs } from '../../server/extensions/Player';
 import ChatController from '../../server/systems/chat';
+import { SYSTEM_EVENTS } from '../../shared/enums/System';
 import { PERMISSIONS } from '../../shared/flags/PermissionFlags';
 
 let interiors = [
@@ -1467,10 +1468,25 @@ export class GpInteriors {
     static init(): void {
         ChatController.addCommand('gotointerior', '/gotointerior [name] - Goto Interior (try /gotointerior Movie Theatre)', PERMISSIONS.ADMIN, async (player: alt.Player, ...args: string[]) => {
             let name = args.join(' ');
-            let interior = interiors.filter(interior => interior.Name.includes(name));
-            if (interior && interior.length > 0) {
-                let coords = interior[0].Position.split(',')
+            let filteredInteriors = interiors.filter(interior => interior.Name.includes(name));
+            if (filteredInteriors && filteredInteriors.length > 0) {
+                let interior = filteredInteriors[0];
+                let coords = interior.Position.split(',')
+
+                if (interior.IPL) {
+                    alt.emitClient(player, SYSTEM_EVENTS.IPL_LOAD, interior.IPL);
+                }
+
+                playerFuncs.set.frozen(player, true);
+
                 playerFuncs.safe.setPosition(player, parseFloat(coords[0]), parseFloat(coords[1]), parseFloat(coords[2] + 0.5));
+
+                // Freeze Player for Interior Loading
+                alt.setTimeout(() => {
+                    playerFuncs.set.frozen(player, false);
+                    playerFuncs.emit.message(player, `Interior loaded, Name: ` + interior.Name + `|Position:` + interior.Position + `|IPL:` + interior.IPL + `|Category:` + interior.Categories);
+                }, 1000);
+
             } else {
                 playerFuncs.emit.message(player, `Could not find interior: ` + name);
             }
