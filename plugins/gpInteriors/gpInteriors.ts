@@ -1494,6 +1494,14 @@ export class GpInteriors {
         });
     }
 
+    static getInterior(name: string) {
+        let interior = interiors.filter(interior => interior.Name.includes(name));
+        if (interior && interior.length > 0) {
+            return interior[0]
+        }
+        return null;
+    }
+
     static getInteriorPosition(name: string): Vector3 {
         let interior = interiors.filter(interior => interior.Name.includes(name));
         if (interior && interior.length > 0) {
@@ -1511,11 +1519,32 @@ export class GpInteriors {
         return null;
     }
 
-    static getInteriors(): string[] {
-        return null;
+    static getInteriors() {
+        return interiors;
     }
 
-    static getInteriorsByCategory(category: string): string[] {
-        return null;
+    static getInteriorsByCategory(category: string) {
+        return interiors.filter(interior => interior.Categories.includes(category));
     }
+
+    static getInteriorNames() {
+        var names = interiors.map(function (item) {
+            return item['Name'];
+        });
+
+        return names;
+    }
+
+    static getInteriorNamesByCategory(category: string): string[] {
+        let filteredInteriors = interiors.filter(interior => interior.Categories.includes(category));
+
+        var names = filteredInteriors.map(function (item) {
+            return item['Name'];
+        });
+
+        return names;
+    }
+
+
+
 }

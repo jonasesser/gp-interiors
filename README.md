@@ -20,10 +20,18 @@ GotoInterior Command for Athena Framework
     ```
     import { GpInteriors, GpInteriors_Category } from '../gpInteriors/gpInteriors';
     ...
-    let allInteriorNames = GpInteriors.getInteriors();
-    let interiorNamesByCat = GpInteriors.getInteriorsByCategory(GpInteriors_Category.Office);
-    position = GpInteriors.getInteriorPosition(interiorNamesByCat[0]);  //returns alt.Vector3
-    let ipl = GpInteriors.getInteriorIPL(interiorNamesByCat[0]); //returns IPL name to be load or null
+     //Get Interiors    
+    let interior = GpInteriors.getInterior("Movie Theatre");
+    let allInteriors = GpInteriors.getInteriors();
+    let interiorByCat = GpInteriors.getInteriorsByCategory(GpInteriors_Category.Office);
+
+    //Get Interior names only
+    let allInteriorNames = GpInteriors.getInteriorNames();
+    let interiorNamesByCat = GpInteriors.getInteriorNamesByCategory(GpInteriors_Category.Office);
+
+    //Get Interior position by name
+    let position = GpInteriors.getInteriorPosition(interior.Name);  //returns alt.Vector3
+    let ipl = GpInteriors.getInteriorIPL(interior.Name); //returns IPL name to be load or null
     ```
 
 # Categories
