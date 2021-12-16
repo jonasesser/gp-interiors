@@ -1,10 +1,14 @@
 # altv-athena-plugin-interior
-GotoInterior Command for Athena Framework
+
+This Plugin helps you to find an interior including position and ipl informations.
+You can use it ingame or for development as interior database.
 
 # Installation
 
-1. Copy Folder plugins/gpInteriors/ to your athena project under src/core/plugins/
-2. Import server plugin in src/core/plugins/imports.ts:
+1. Grab from github
+    https://github.com/jonasesser/altv-athena-plugin-interior
+2. Copy Folder plugins/gpInteriors/ to your athena project under src/core/plugins/
+3. Import server plugin in src/core/plugins/imports.ts:
 
     ```import './gpInteriors/index';```
 

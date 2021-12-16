@@ -1445,8 +1445,55 @@ let interiors = [
         "Position": "-473.4971, -361.0964, 33.9467",
         "IPL": "Custom",
         "Categories": "Custom"
+    },
+    {
+        "Name": "Office1",
+        "Position": "-1016.37, -430.32, 68.3",
+        "IPL": "null",
+        "Categories": "TheContract"
+    },
+    {
+        "Name": "Office2",
+        "Position": "389.32, -58.19, 112.99",
+        "IPL": "null",
+        "Categories": "TheContract"
+    },
+    {
+        "Name": "Office3",
+        "Position": "-1008.54, -758.14, 71.39",
+        "IPL": "null",
+        "Categories": "TheContract"
+    },
+    {
+        "Name": "Office4",
+        "Position": "-590.44, -721.96, 122.1",
+        "IPL": "null",
+        "Categories": "TheContract"
+    },
+    {
+        "Name": "UnderTheMap",
+        "Position": "-1127.66, -68.36, -89.32",
+        "IPL": "null",
+        "Categories": "TheContract"
+    },
+    {
+        "Name": "Big Studio",
+        "Position": "-999.22, -65.65, -97.36",
+        "IPL": "null",
+        "Categories": "TheContract"
+    },
+    {
+        "Name": "Big Garage",
+        "Position": "-1074.22, -80.16, -93.39",
+        "IPL": "null",
+        "Categories": "TheContract"
+    },
+    {
+        "Name": "Weed",
+        "Position": "2920.9, 4472.8, -98.0",
+        "IPL": "null",
+        "Categories": "TheContract"
     }
-
 ];
 
 export enum GpInteriors_Category {
