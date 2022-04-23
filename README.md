@@ -7,11 +7,7 @@ You can use it ingame or for development as interior database.
 
 1. Grab from github
     https://github.com/jonasesser/altv-athena-plugin-interior
-2. Copy Folder plugins/gpInteriors/ to your athena project under src/core/plugins/
-3. Import server plugin in src/core/plugins/imports.ts:
-
-    ```import './gpInteriors/index';```
-
+2. Copy Folder gp-interiors to your athena project under src/core/plugins/
 
 # Usage
 
