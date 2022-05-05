@@ -5,8 +5,8 @@ You can use it ingame or for development as interior database.
 
 # Installation
 
-1. Grab from github
-    https://github.com/jonasesser/altv-athena-plugin-interior
+1. Get plugin from gumroad (Yes it's free, but I am happy when I notice that someone is using it.)
+    https://mygp.gumroad.com/l/interiorplugin
 2. Copy Folder gp-interiors to your athena project under src/core/plugins/
 
 # Usage
