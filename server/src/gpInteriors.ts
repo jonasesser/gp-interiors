@@ -37,7 +37,6 @@ export class GpInteriors {
         }
     }
 
-    // @command('getinterior', '/getinterior [name] - Get Interior (try /getinterior Movie Theatre)', PERMISSIONS.ADMIN)
     static getInterior(player: alt.Player, ...args: string[]) {
         const name = args.join(' ');
         const interior = interiors.filter((interior) => interior.name.includes(name));
@@ -47,7 +46,6 @@ export class GpInteriors {
         return null;
     }
 
-    // @command('getinteriorposition', '/getinteriorposition [name] - Get Interior Position (try /getinteriorposition Movie Theatre)', PERMISSIONS.ADMIN)
     static getInteriorPosition(player: alt.Player, ...args: string[]): Vector3 | null {
         const name = args.join(' ');
         const currentInterior = interiors.find((x) => x.name === name);
@@ -57,7 +55,6 @@ export class GpInteriors {
         return null;
     }
 
-    // @command('getinterioripl', '/getinterioripl [name] - Get Interior IPL (try /getinterioripl Movie Theatre)', PERMISSIONS.ADMIN)
     static getInteriorIPL(player: alt.Player, ...args: string[]): string | null {
         const name = args.join(' ');
         const interior = interiors.filter((interior) => interior.name.includes(name));
@@ -67,18 +64,15 @@ export class GpInteriors {
         return null;
     }
 
-    // @command('getinteriors', '/getinteriors - Get All Interiors', PERMISSIONS.ADMIN)
     static getInteriors() {
         return interiors;
     }
 
-    // @command('getinteriorsbycategory', '/getinteriorsbycategory [category] - Get Interiors by Category (try /getinteriorsbycategory Store)', PERMISSIONS.ADMIN)
     static getInteriorsByCategory(player: alt.Player, ...args: string[]) {
         const category = args.join(' ');
         return interiors.filter((interior) => interior.categories.includes(category));
     }
 
-    // @command('getinteriornames', '/getinteriornames - Get All Interior Names', PERMISSIONS.ADMIN)
     static getInteriorNames(): string[] {
         const names = interiors.map(function (item) {
             return item.name;
@@ -87,7 +81,6 @@ export class GpInteriors {
         return names;
     }
 
-    // @command('getinteriornamesbycategory', '/getinteriornamesbycategory [category] - Get Interior Names by Category (try /getinteriornamesbycategory Store)', PERMISSIONS.ADMIN)
     static getInteriorNamesByCategory(player: alt.Player, ...args: string[]): string[] {
         const category = args.join(' ');
         const filteredInteriors = interiors.filter((interior) => interior.categories.includes(category));
