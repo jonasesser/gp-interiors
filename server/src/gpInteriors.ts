@@ -31,6 +31,9 @@ export class GpInteriors {
             alt.setTimeout(() => {
                 Athena.player.set.frozen(player, false);
                 Athena.player.emit.message(player, `You have entered ${interior.name}`);
+                Athena.player.emit.message(player, `Interior Position: ${interior.position.x}, ${interior.position.y}, ${interior.position.z}`);
+                Athena.player.emit.message(player, `Interior IPL: ${interior.ipl}`);
+                Athena.player.emit.message(player, `Interior categories: ${interior.categories}`);
             }, 1000);
         } else {
             Athena.player.emit.message(player, `Interior ${name} not found!`);
