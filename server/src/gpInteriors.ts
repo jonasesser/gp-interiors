@@ -40,8 +40,7 @@ export class GpInteriors {
         }
     }
 
-    static getInterior(player: alt.Player, ...args: string[]) {
-        const name = args.join(' ');
+    static getInterior(name: string) {
         const interior = interiors.filter((interior) => interior.name.includes(name));
         if (interior && interior.length > 0) {
             return interior[0];
@@ -49,8 +48,7 @@ export class GpInteriors {
         return null;
     }
 
-    static getInteriorPosition(player: alt.Player, ...args: string[]): Vector3 | null {
-        const name = args.join(' ');
+    static getInteriorPosition(name: string): Vector3 | null {
         const currentInterior = interiors.find((x) => x.name === name);
         if (currentInterior) {
             return currentInterior.position as Vector3;
@@ -58,8 +56,7 @@ export class GpInteriors {
         return null;
     }
 
-    static getInteriorIPL(player: alt.Player, ...args: string[]): string | null {
-        const name = args.join(' ');
+    static getInteriorIPL(name: string): string | null {
         const interior = interiors.filter((interior) => interior.name.includes(name));
         if (interior && interior.length > 0) {
             return interior[0].ipl;
@@ -71,8 +68,7 @@ export class GpInteriors {
         return interiors;
     }
 
-    static getInteriorsByCategory(player: alt.Player, ...args: string[]) {
-        const category = args.join(' ');
+    static getInteriorsByCategory(category: string) {
         return interiors.filter((interior) => interior.categories.includes(category));
     }
 
@@ -84,8 +80,7 @@ export class GpInteriors {
         return names;
     }
 
-    static getInteriorNamesByCategory(player: alt.Player, ...args: string[]): string[] {
-        const category = args.join(' ');
+    static getInteriorNamesByCategory(category: string): string[] {
         const filteredInteriors = interiors.filter((interior) => interior.categories.includes(category));
 
         const names = filteredInteriors.map(function (item) {
