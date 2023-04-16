@@ -1,20 +1,20 @@
 import * as alt from 'alt-server';
 import { Vector3 } from 'alt-shared';
-import { Athena } from '../../../../server/api/athena';
-import { command } from '../../../../server/decorators/commands';
-import { SYSTEM_EVENTS } from '../../../../shared/enums/system';
-import { PERMISSIONS } from '../../../../shared/flags/permissionFlags';
+import * as Athena from '@AthenaServer/api';
 
 import interiors from '../defaults/interiors';
+import { SYSTEM_EVENTS } from '@AthenaShared/enums/system';
 
 export class GpInteriors {
-    static init() {}
+    static init() {
+        Athena.systems.messenger.commands.register(
+            'gotointerior',
+            '/gotointerior  [name] - Goto Interior (try /gotointerior Movie Theatre)',
+            ['admin'],
+            GpInteriors.gotoInterior,
+        );
+    }
 
-    @command(
-        'gotointerior',
-        '/gotointerior [name] - Goto Interior (try /gotointerior Movie Theatre)',
-        PERMISSIONS.ADMIN,
-    )
     static gotoInterior(player: alt.Player, ...args: string[]) {
         const name = args.join(' ');
         const filteredInteriors = interiors.filter((interior) => interior.name.includes(name));
@@ -26,12 +26,12 @@ export class GpInteriors {
                 alt.emitClient(player, SYSTEM_EVENTS.IPL_LOAD, interior.ipl);
             }
 
-            Athena.player.set.frozen(player, true);
+            player.frozen = true;
             Athena.player.safe.setPosition(player, interior.position.x, interior.position.y, interior.position.z);
 
             // Freeze Player for Interior Loading
             alt.setTimeout(() => {
-                Athena.player.set.frozen(player, false);
+                player.frozen = false;
                 Athena.player.emit.message(player, `You have entered ${interior.name}`);
                 Athena.player.emit.message(
                     player,
