@@ -1,6 +1,6 @@
 <template>
-  <div class="property-management-container primevue" :class="{ 'transparent': isJumping }">
-    <div class="property-management">
+  <div class="property-management-container primevue" >
+    <div :class="getStyleTransparency">
       <!-- Linkes Panel: Filter -->
       <div class="property-sidebar">
         <h2>Properties</h2>
@@ -32,22 +32,28 @@
           <div class="card flex justify-center">
             <Button label="Jump To" icon="pi pi-arrow-right" @click="toggleJump" :severity="isJumping ? 'danger' : 'warn'" >
               <span v-if="!isJumping">Jump each {{jumpTime}} ms</span>
-              <span v-if="isJumping">Stop Jumping</span>
+              <span v-if="isJumping">Pause Jumping</span>
             </Button>
+            <br/>
+            <Button label="Toggle Transparenz" icon="pi pi-arrow-right"  @click="toggleTransparenz" aria-label="Toggle Transparenz" /><br/>
+            <Button label="Update door position" icon="pi pi-arrow-right" @click="updateDoorPosition" aria-label="Update door position" /><br/>
           </div>
         </div>
 
       </div>
 
       <!-- Rechte Spalte: Tabelle -->
-      <div class="property-list">
+      <div class="property-list" v-if="!transparenz">
         <!-- <h2>Properties</h2> -->
         <div class="table-container"> 
           <DataTable :value="filteredProperties" v-model:filters="filters" filterDisplay="menu" paginator :rows="9" :rowsPerPageOptions="[9, 18, 27, 50, 100, 1000, 5000]" :sortField="sortField" :sortOrder="sortOrder" @sort="onSort" v-model:selection="selectedProperties" editable class="property-table" dataKey="id" paginatorTemplate="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink RowsPerPageDropdown" currentPageReportTemplate="{first} to {last} of {totalRecords}">
               <Column selectionMode="multiple" headerStyle="width: 3em"/>
               <Column field="typeDisplayName" headerStyle="width: 3em">
                 <template #body="slotProps">
-                  <span :class="getPropertyIcons(slotProps.data.typeDisplayName)" v-tooltip="slotProps.data.typeDisplayName"/>
+                  <span :class="getPropertyIcons(slotProps.data.typeDisplayName)" v-tooltip="slotProps.data.typeDisplayName" :style="{ color: highlightRow(slotProps.data) }">
+                  
+
+                  </span>
                   
                 </template>
 
@@ -237,6 +243,9 @@ import TreeSelect from 'primevue/treeselect';
 import { FilterMatchMode } from '@primevue/core/api';
 import { staticHouseData } from './houses';
 import { View_Events_GPProperties } from '../shared/events';
+import { Properity } from '../shared/interfaces';
+import { update } from '@AthenaClient/camera/pedEdit';
+import pl from '@AthenaShared/locale/languages/pl';
 
 const ComponentName = View_Events_GPProperties.PAGE_NAME;
 export default defineComponent({
@@ -439,6 +448,7 @@ export default defineComponent({
       showMap: false, // Für die Sichtbarkeit der Karte
       jumpTime: 2000, // Standardzeit für Jump To
       jumpInterval: null, // Interval für Jump To
+      transparenz: false, // Status für die Transparenz
       isJumping: false, // Status für den Jump To Vorgang
       bulkEditVisible: false, // Status für die Sichtbarkeit des Bulk Edit Dialogs
       bulkEditType: null, // Typ für die Bulk Edit
@@ -490,6 +500,10 @@ export default defineComponent({
     };
   },
   computed: {
+    
+    getStyleTransparency() {
+      return this.transparenz ? 'property-management transparent' : 'property-management nottransparent';
+    },
     filteredProperties() {
       const filtered = this.properties.filter(property => {
         let matches = true;
@@ -591,6 +605,22 @@ export default defineComponent({
       // this.statusOptions.push({ label: 'Unclaimed', value: 'Unclaimed' });
   },
   methods: {
+    updateDoorPosition() {
+      //find highlighted property
+      const property = this.selectedProperties.find(p => p.highlight);
+      if (!property) {
+        return;
+      }
+      WebViewEvents.emitServer(View_Events_GPProperties.VS_UpdateDoorPosition, property);
+    },
+    highlightRow(rowData) {
+      // Bedingung: Hervorheben, wenn der Status 'active' ist
+      return rowData.highlight ? 'yellow' : 'white';
+    },
+    toggleTransparenz() {
+      this.transparenz = !this.transparenz;
+      WebViewEvents.emitClient(View_Events_GPProperties.VC_ActivateControl);      
+    },
     leftFilterSelected(event) {
       if(this.filters.zoneDisplayName && this.filters.zoneDisplayName.label  || this.filters.streetDisplayName && this.filters.streetDisplayName.label || this.filters.status && this.filters.status.label || this.filters.typeDisplayName && this.filters.typeDisplayName.label) {
         console.log('Filter Selected');
@@ -720,7 +750,7 @@ export default defineComponent({
             return `blip1`;
         }
       },
-      getPropertyIcons(name: string) {
+      getPropertyIcons(name: string) {      
         switch (name) {
           case 'House':
             return "pi pi-home";
@@ -794,14 +824,16 @@ export default defineComponent({
 
         event.preventDefault();
     },
-    openProperty(property) {
+    openProperty(property: Properity) {
       console.log('Opening property:', property);
     },
-    closeProperty(property) {
+    closeProperty(property: Properity) {
       console.log('Closing property:', property);
     },
-    jumpToProperty(property) {
+    jumpToProperty(property: Properity) {
       console.log('Jumping to property:', property);
+      WebViewEvents.emitServer(View_Events_GPProperties.SV_JumpToProperty, property);
+      
       // Hier kann die Logik für den Jump To ausgeführt werden
     },
     toggleJump() {
@@ -813,18 +845,41 @@ export default defineComponent({
     },
     startJump() {
       this.isJumping = true;
+      this.transparenz = true; // Setze die Transparenz
+      WebViewEvents.emitClient(View_Events_GPProperties.VC_ActivateControl, true);
       let index = 0;
-      const propertiesCount = this.filteredProperties.length;
+      const propertiesCount = this.selectedProperties.length;
+
+      //Restart after first highlighted property or on start if no property is highlighted
+      //find index of first highlighted property
+      for (let i = 0; i < propertiesCount; i++) {
+        if (this.selectedProperties[i].highlight) {
+          index = i + 1;
+          break;
+        }
+      }
+
       this.jumpInterval = setInterval(() => {
         if (index >= propertiesCount) {
           index = 0; // Reset to the first property if at the end
         }
-        const property = this.filteredProperties[index];
+        const property = this.selectedProperties[index];
         this.jumpToProperty(property); // Springe zur aktuellen Property
+        property.highlight = true; // Setze die Property als aktiv
+
+        // setze das higlight der properties davor zurück
+        if (index > 0) {
+          this.selectedProperties[index - 1].highlight = false;
+        } else {
+          this.selectedProperties[propertiesCount - 1].highlight = false;
+        }
+
         index++;
       }, this.jumpTime);
     },
     stopJump() {
+      WebViewEvents.emitClient(View_Events_GPProperties.VC_ActivateControl, false);
+      this.transparenz = false; // Setze die Transparenz
       this.isJumping = false;
       clearInterval(this.jumpInterval);
     },
@@ -904,7 +959,7 @@ export default defineComponent({
     },
     clearFilter() {
       this.initFilters();
-    },
+    },   
   },
   watch: {
     selectedProperties: {
@@ -958,12 +1013,8 @@ export default defineComponent({
 
 <style scoped>
 
-.property-management-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative; /* Positionierung für den transparenten Effekt */
+.highlight-row {
+  background-color: lightgreen;
 }
 
 .property-management {
@@ -978,7 +1029,11 @@ export default defineComponent({
 }
 
 .transparent {
-  background-color: rgba(30, 30, 30, 0.7); /* Halbtransparenter Effekt während des Jump Vorgangs */
+  background-color: rgba(30, 30, 30, 0.2); /* Halbtransparenter Effekt während des Jump Vorgangs */
+}
+
+.nottransparent {
+  background-color: rgba(30, 30, 30, 0.7); /* Normaler Hintergrund */
 }
 
 .property-sidebar {
