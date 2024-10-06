@@ -1,4 +1,4 @@
-export const enum GpInteriors_Category {
+﻿export const enum GpInteriors_Category {
     Custom = 'Custom',
     Special = 'Special',
     Store = 'Store',

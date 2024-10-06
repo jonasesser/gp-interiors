@@ -1,4 +1,4 @@
-export default [
+﻿export default [
     {
         "name": "Casino Penthouse",
         "ipl": "vw_casino_penthouse",

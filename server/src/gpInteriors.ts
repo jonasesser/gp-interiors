@@ -1,16 +1,17 @@
-import * as alt from 'alt-server';
+﻿import * as alt from 'alt-server';
 import { Vector3 } from 'alt-shared';
-import * as Athena from '@AthenaServer/api';
+import * as Athena from '@AthenaServer/api/index.js';
 
-import interiors from '../defaults/interiors';
-import { SYSTEM_EVENTS } from '@AthenaShared/enums/system';
+import interiors from '../defaults/interiors.js';
+import { SYSTEM_EVENTS } from '@AthenaShared/enums/system.js';
+import { PermSetAdmin } from '@AthenaServer/systems/permission.js';
 
 export class GpInteriors {
     static init() {
         Athena.systems.messenger.commands.register(
             'gotointerior',
             '/gotointerior  [name] - Goto Interior (try /gotointerior Movie Theatre)',
-            ['admin'],
+            PermSetAdmin,
             GpInteriors.gotoInterior,
         );
     }
