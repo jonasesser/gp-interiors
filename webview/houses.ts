@@ -1,5 +1,7 @@
 
 // Funktion zum Laden von JSON-Dateien über HTTP
+
+let staticHouseData = null;
 async function loadJsonFile(_path) {
   
     let path = _path;
@@ -16,9 +18,13 @@ async function loadJsonFile(_path) {
    
 }
 
-async function loadStaticHouses() {
-   return await loadJsonFile('http://assets/gp-assets/gp-interiors/gp_houses.json');
+export async function loadStaticHouses() {
+    if (!staticHouseData) {
+        staticHouseData = await loadJsonFile('http://assets/gp-assets/gp-interiors/gp_houses.json');
+    }
+   return staticHouseData;
 }
 
-// Lade die Übersetzungen und exportiere sie
-export const staticHouseData = await loadStaticHouses();
+export function getStaticHouses() {
+    return staticHouseData;
+}

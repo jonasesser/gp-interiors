@@ -1,6 +1,6 @@
 import * as alt from 'alt-server';
 import * as Athena from '@AthenaServer/api/index.js';
-import { PermSetModerator } from '@AthenaServer/systems/permission.js';
+import { PermSetModerator, PermSetUser } from '@AthenaServer/systems/permission.js';
 import { View_Events_GPProperties } from '@AthenaPlugins/gp-interiors/shared/events.js';
 import { Properity } from '@AthenaPlugins/gp-interiors/shared/interfaces.js';
 import { WebhookSystem } from '@AthenaPlugins/webhook/server/src/webhookSystem.js';
@@ -12,7 +12,7 @@ export class PropertiesServerView {
         Athena.systems.messenger.commands.register(
             'openProperties',
             '/openProperties - Open openProperties',
-            PermSetModerator,
+            PermSetUser,
             PropertiesServerView.open,
         );
 

@@ -241,11 +241,9 @@ import GtaMap from './components/GtaMap.vue';
 import ResolvePath from '@utility/pathResolver.js';
 import TreeSelect from 'primevue/treeselect';
 import { FilterMatchMode } from '@primevue/core/api';
-import { staticHouseData } from './houses';
+import { getStaticHouses, loadStaticHouses } from './houses';
 import { View_Events_GPProperties } from '../shared/events';
 import { Properity } from '../shared/interfaces';
-import { update } from '@AthenaClient/camera/pedEdit';
-import pl from '@AthenaShared/locale/languages/pl';
 
 const ComponentName = View_Events_GPProperties.PAGE_NAME;
 export default defineComponent({
@@ -546,7 +544,7 @@ export default defineComponent({
     }
     
   },
-  mounted() {
+  async mounted() {
     // WebViewEvents.on(View_Events_Straighten.CV_SetOptions, this.setOptions);
     // WebViewEvents.on(View_Events_GPShop.SV_SetItems, this.fillshopItems);
     WebViewEvents.emitReady(ComponentName);
@@ -560,8 +558,11 @@ export default defineComponent({
       const dataCollection = {}; // Objekt zur Sammlung von Daten
 
       // // this.properties = this.generateDummyData(50); // Dummy-Daten generieren beim Mount
-      this.properties = staticHouseData;
+      this.properties = await loadStaticHouses();
 
+      if (!this.properties) {
+        return;
+      }
       //Add id to each property
       for (let i = 0; i < this.properties.length; i++) {
         this.properties[i].id = i + 1;
@@ -597,10 +598,10 @@ export default defineComponent({
       this.buildBlips();
 
       //  // Dynamically generate filter options based on loaded data
-      this.zoneOptions = this.generateUniqueOptions(staticHouseData, 'zoneDisplayName');
-      this.streetOptions = this.generateUniqueOptions(staticHouseData, 'streetDisplayName');
-      this.statusOptions = this.generateUniqueStatusOptions(staticHouseData, 'status');
-      this.typeOptions = this.generateUniqueOptions(staticHouseData, 'typeDisplayName');
+      this.zoneOptions = this.generateUniqueOptions(getStaticHouses(), 'zoneDisplayName');
+      this.streetOptions = this.generateUniqueOptions(getStaticHouses(), 'streetDisplayName');
+      this.statusOptions = this.generateUniqueStatusOptions(getStaticHouses(), 'status');
+      this.typeOptions = this.generateUniqueOptions(getStaticHouses(), 'typeDisplayName');
 
       // this.statusOptions.push({ label: 'Unclaimed', value: 'Unclaimed' });
   },
