@@ -862,7 +862,8 @@ export default defineComponent({
 
       this.jumpInterval = setInterval(() => {
         if (index >= propertiesCount) {
-          index = 0; // Reset to the first property if at the end
+          this.stopJump(); // Stoppe das Springen, wenn der letzte Eintrag erreicht ist
+          index = 0; // Reset to the first property if at the end 
         }
         const property = this.selectedProperties[index];
         this.jumpToProperty(property); // Springe zur aktuellen Property
